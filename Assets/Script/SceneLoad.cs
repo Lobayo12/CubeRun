@@ -7,6 +7,7 @@ public class SceneLoad : MonoBehaviour
 
     public bool playing;
 
+
     private void Awake()
     {
         // Ensure only one instance exists
@@ -49,5 +50,8 @@ public class SceneLoad : MonoBehaviour
     {
         // Load the scene when button pressed
         SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Level1");
+        playing = true;
+        Debug.Log("Playing state set to true");
     }
 }
