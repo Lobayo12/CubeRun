@@ -3,15 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoad : MonoBehaviour
 {
-    public void StartGame()
-    {
-        if (SceneLoad.Instance != null)
-        {
-            SceneLoad.Instance.playing = true; // Set the `playing` variable to true
-        }
 
-        UnityEngine.SceneManagement.SceneManager.LoadScene("GameScene"); // Load the game scene
-    }
 
 
     public void WhenLevel1Pressed()

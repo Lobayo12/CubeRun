@@ -3,21 +3,21 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour
 {
     [SerializeField]
-    private Transform playerTransform;
+    private Transform playerTransform;  // Reference to the player
 
     [SerializeField]
-    private float followSpeed = 5f;
+    private float followSpeed = 5f;  // Speed at which the camera follows
 
     [SerializeField]
-    private Vector3 offset;
+    private Vector3 offset;  // Offset from the player
 
-    private float fixedY;
+    private float fixedY;  // Fixed Y position for the camera
 
     void Start()
     {
         Debug.Log("CameraMovement script started.");
 
-        // Assign playerTransform if not already set in the inspector
+        // Initialize the player transform if not set
         if (playerTransform == null)
         {
             Debug.Log("PlayerTransform is null. Attempting to find the player...");
@@ -28,62 +28,28 @@ public class CameraMovement : MonoBehaviour
             Debug.Log($"PlayerTransform already assigned: {playerTransform.name}");
         }
 
-        // Ensure the Y position is locked
+        // Set the fixed Y position for the camera
         fixedY = transform.position.y;
         Debug.Log($"Camera's fixed Y position set to: {fixedY}");
-
-        // Log the initial state of SceneLoad.Instance.playing
-        if (SceneLoad.Instance != null)
-        {
-            Debug.Log($"SceneLoad.Instance.playing = {SceneLoad.Instance.playing}");
-        }
-        else
-        {
-            Debug.LogWarning("SceneLoad.Instance is null! Ensure SceneLoad exists and is persistent across scenes.");
-        }
     }
 
     void LateUpdate()
     {
-        Debug.Log("LateUpdate called.");
-
-        // Check if SceneLoad.Instance is available and playing is true
-        if (SceneLoad.Instance != null && SceneLoad.Instance.playing)
-        {
-            Debug.Log("Camera is allowed to move (SceneLoad.Instance.playing is true).");
-
-            // Check if playerTransform is assigned
-            if (playerTransform != null)
-            {
-                // Update camera position
-                Vector3 targetPosition = new Vector3(playerTransform.position.x + offset.x, fixedY, transform.position.z);
-                transform.position = Vector3.Lerp(transform.position, targetPosition, followSpeed * Time.deltaTime);
-
-                Debug.Log($"Camera moved to: {transform.position}");
-            }
-            else
-            {
-                Debug.LogError("playerTransform is null! Camera cannot follow the player.");
-            }
-        }
-        else
-        {
-            Debug.LogWarning("Camera movement is disabled because SceneLoad.Instance is null or playing is false.");
-        }
-
+        // Check if the game is 'playing' and if the player transform is assigned
         if (SceneLoad.Instance != null && SceneLoad.Instance.playing && playerTransform != null)
         {
+            // Move the camera to follow the player
             Vector3 targetPosition = new Vector3(playerTransform.position.x + offset.x, fixedY, transform.position.z);
             transform.position = Vector3.Lerp(transform.position, targetPosition, followSpeed * Time.deltaTime);
             Debug.Log($"Camera moved to: {transform.position}");
         }
         else
         {
-            Debug.LogWarning("Camera did not move. Check SceneLoad.Instance and playerTransform.");
+            Debug.LogWarning("Camera movement is disabled.");
         }
-
     }
 
+    // Attempt to find the player in the scene
     private void FindPlayer()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");

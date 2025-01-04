@@ -25,8 +25,3 @@ public class Button2D : MonoBehaviour
         StartGame("Level1"); // Replace with your scene name
     }
 }
-
-
-
-
-

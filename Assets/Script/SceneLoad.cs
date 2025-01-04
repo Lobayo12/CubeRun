@@ -1,21 +1,19 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class SceneLoad : MonoBehaviour
 {
-    public static SceneLoad Instance;
+    public static SceneLoad Instance;  // Singleton instance
+    public bool playing = false;      // Tracks the "playing" state
 
-    public bool playing;
-
-
-
-
-    private void Awake()
+    void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject);  // Ensures the object stays across scenes
+            Debug.Log("SceneLoad Singleton Initialized");
         }
         else
         {
@@ -26,7 +24,7 @@ public class SceneLoad : MonoBehaviour
 
     private void OnEnable()
     {
-        // Subscribe to the scene loaded event
+        // Subscribe to scene loading events
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
@@ -38,24 +36,32 @@ public class SceneLoad : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        Debug.Log($"OnSceneLoaded triggered. Scene: {scene.name}, playing set to: {playing}");
+
         if (scene.name == "LevelsMenu")
         {
-            playing = true;
+            playing = true;  // Set playing to true for "LevelsMenu"
         }
         else
         {
-            playing = false;
+            playing = false; // Otherwise, set it to false
         }
     }
 
+
     public void WhenPlayPressed()
     {
-        // Load the scene when button pressed
-        SceneManager.LoadScene("LevelsMenu");
-        SceneManager.LoadScene("LevelsMenu");
-        playing = true;
-        Debug.Log("Playing state set to true");
+        Debug.Log("Button pressed: Setting playing to true");
+        SceneLoad.Instance.playing = true;
+        StartCoroutine(LoadSceneAfterDelay());
     }
 
+    private IEnumerator LoadSceneAfterDelay()
+    {
+        yield return new WaitForSeconds(0.1f); // Delay for one frame
+        SceneManager.LoadScene("LevelsMenu");
+        Debug.Log("SceneLoad: LevelsMenu loaded");
+    }
 
 }
+
