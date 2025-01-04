@@ -8,9 +8,10 @@ public class SceneLoad : MonoBehaviour
     public bool playing;
 
 
+
+
     private void Awake()
     {
-        // Ensure only one instance exists
         if (Instance == null)
         {
             Instance = this;
@@ -21,6 +22,7 @@ public class SceneLoad : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 
     private void OnEnable()
     {
@@ -36,7 +38,7 @@ public class SceneLoad : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (scene.name == "Level1")
+        if (scene.name == "LevelsMenu")
         {
             playing = true;
         }
@@ -49,9 +51,11 @@ public class SceneLoad : MonoBehaviour
     public void WhenPlayPressed()
     {
         // Load the scene when button pressed
-        SceneManager.LoadScene("Level1");
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("LevelsMenu");
+        SceneManager.LoadScene("LevelsMenu");
         playing = true;
         Debug.Log("Playing state set to true");
     }
+
+
 }

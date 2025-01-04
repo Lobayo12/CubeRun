@@ -15,63 +15,86 @@ public class CameraMovement : MonoBehaviour
 
     void Start()
     {
-        void Start()
-        {
-            if (playerTransform == null)
-            {
-                playerTransform = GameObject.FindWithTag("Player")?.transform;
+        Debug.Log("CameraMovement script started.");
 
-                if (playerTransform != null)
-                {
-                    Debug.Log($"Player Transform dynamically assigned: {playerTransform.name}");
-                }
-                else
-                {
-                    Debug.LogWarning("No GameObject with the 'Player' tag found!");
-                }
-            }
-            fixedY = transform.position.y;
+        // Assign playerTransform if not already set in the inspector
+        if (playerTransform == null)
+        {
+            Debug.Log("PlayerTransform is null. Attempting to find the player...");
+            FindPlayer();
+        }
+        else
+        {
+            Debug.Log($"PlayerTransform already assigned: {playerTransform.name}");
         }
 
+        // Ensure the Y position is locked
+        fixedY = transform.position.y;
+        Debug.Log($"Camera's fixed Y position set to: {fixedY}");
+
+        // Log the initial state of SceneLoad.Instance.playing
+        if (SceneLoad.Instance != null)
+        {
+            Debug.Log($"SceneLoad.Instance.playing = {SceneLoad.Instance.playing}");
+        }
+        else
+        {
+            Debug.LogWarning("SceneLoad.Instance is null! Ensure SceneLoad exists and is persistent across scenes.");
+        }
     }
 
     void LateUpdate()
     {
-        if (playerTransform != null)
+        Debug.Log("LateUpdate called.");
+
+        // Check if SceneLoad.Instance is available and playing is true
+        if (SceneLoad.Instance != null && SceneLoad.Instance.playing)
         {
-            Debug.Log($"Player Position: {playerTransform.position}");
+            Debug.Log("Camera is allowed to move (SceneLoad.Instance.playing is true).");
 
-            if (SceneLoad.Instance.playing)
+            // Check if playerTransform is assigned
+            if (playerTransform != null)
             {
-                Debug.Log("Camera is moving.");
-
                 // Update camera position
                 Vector3 targetPosition = new Vector3(playerTransform.position.x + offset.x, fixedY, transform.position.z);
                 transform.position = Vector3.Lerp(transform.position, targetPosition, followSpeed * Time.deltaTime);
 
-                Debug.Log($"Camera Position: {transform.position}");
+                Debug.Log($"Camera moved to: {transform.position}");
+            }
+            else
+            {
+                Debug.LogError("playerTransform is null! Camera cannot follow the player.");
             }
         }
         else
         {
-            Debug.LogWarning("Player Transform is NOT assigned!");
+            Debug.LogWarning("Camera movement is disabled because SceneLoad.Instance is null or playing is false.");
         }
-    }
 
-
-
-
-    private void FindPlayer()
-    {
-        GameObject player = GameObject.FindGameObjectWithTag("Player"); // Look for the Player by tag
-        if (player != null)
+        if (SceneLoad.Instance != null && SceneLoad.Instance.playing && playerTransform != null)
         {
-            playerTransform = player.transform;
+            Vector3 targetPosition = new Vector3(playerTransform.position.x + offset.x, fixedY, transform.position.z);
+            transform.position = Vector3.Lerp(transform.position, targetPosition, followSpeed * Time.deltaTime);
+            Debug.Log($"Camera moved to: {transform.position}");
         }
         else
         {
-            Debug.LogError("Player not found in the scene. Ensure the player has the 'Player' tag.");
+            Debug.LogWarning("Camera did not move. Check SceneLoad.Instance and playerTransform.");
+        }
+
+    }
+
+    private void FindPlayer()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            playerTransform = player.transform;
+            Debug.Log($"Player found and assigned: {player.name}");
+        }
+        else
+        {
+            Debug.LogError("No GameObject with the 'Player' tag found in the scene!");
         }
     }
 }
-
