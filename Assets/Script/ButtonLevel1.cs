@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Button2D : MonoBehaviour
+public class ButtonLevel1 : MonoBehaviour
 {
     public void StartGame(string sceneName)
     {

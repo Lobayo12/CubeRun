@@ -36,7 +36,7 @@ public class CameraMovement : MonoBehaviour
     void LateUpdate()
     {
         // Check if the game is 'playing' and if the player transform is assigned
-        if (SceneLoad.Instance != null && SceneLoad.Instance.playing && playerTransform != null)
+        if (SceneLoad.Instance != null /*&& SceneLoad.Instance.playing*/ && playerTransform != null)
         {
             // Move the camera to follow the player
             Vector3 targetPosition = new Vector3(playerTransform.position.x + offset.x, fixedY, transform.position.z);
