@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 69994250}
   - component: {fileID: 69994251}
   m_Layer: 0
-  m_Name: Triangle
+  m_Name: 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -731,8 +731,9 @@ GameObject:
   - component: {fileID: 581771146}
   - component: {fileID: 581771147}
   - component: {fileID: 581771148}
+  - component: {fileID: 581771149}
   m_Layer: 0
-  m_Name: Triangle (8)
+  m_Name: 9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -915,6 +916,18 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 0
+--- !u!114 &581771149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 581771144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11a7d4c36ec10c645b38cf0e3f7dd39d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &627413195
 GameObject:
   m_ObjectHideFlags: 0
@@ -927,8 +940,9 @@ GameObject:
   - component: {fileID: 627413197}
   - component: {fileID: 627413198}
   - component: {fileID: 627413199}
+  - component: {fileID: 627413200}
   m_Layer: 0
-  m_Name: Triangle (4)
+  m_Name: 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1111,6 +1125,18 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 0
+--- !u!114 &627413200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627413195}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ee8f7acd1bb6f64abaf1651dccbc53b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &640995181
 GameObject:
   m_ObjectHideFlags: 0
@@ -1232,8 +1258,9 @@ GameObject:
   - component: {fileID: 847368209}
   - component: {fileID: 847368210}
   - component: {fileID: 847368211}
+  - component: {fileID: 847368212}
   m_Layer: 0
-  m_Name: Triangle (9)
+  m_Name: 10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1417,6 +1444,18 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 0
+--- !u!114 &847368212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847368207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c7cffa0ae3dfca4eb19b5a0a34007ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &926327786
 GameObject:
   m_ObjectHideFlags: 0
@@ -1429,8 +1468,9 @@ GameObject:
   - component: {fileID: 926327788}
   - component: {fileID: 926327789}
   - component: {fileID: 926327790}
+  - component: {fileID: 926327791}
   m_Layer: 0
-  m_Name: Triangle (5)
+  m_Name: 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1613,6 +1653,18 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 0
+--- !u!114 &926327791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 926327786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 323afa1335e34ff4b82659004e486c4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1019305988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1856,8 +1908,9 @@ GameObject:
   - component: {fileID: 1104924378}
   - component: {fileID: 1104924379}
   - component: {fileID: 1104924380}
+  - component: {fileID: 1104924381}
   m_Layer: 0
-  m_Name: Triangle (3)
+  m_Name: 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2040,6 +2093,18 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 0
+--- !u!114 &1104924381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1104924376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49445ce1ba0798d42b25b45cedca844d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1155276646
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2589,8 +2654,9 @@ GameObject:
   - component: {fileID: 1689835598}
   - component: {fileID: 1689835599}
   - component: {fileID: 1689835600}
+  - component: {fileID: 1689835601}
   m_Layer: 0
-  m_Name: Triangle (7)
+  m_Name: 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2773,6 +2839,18 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 0
+--- !u!114 &1689835601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1689835596}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46dc4253e709d7343b424c759e7dff90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1716461491
 GameObject:
   m_ObjectHideFlags: 0
@@ -2785,8 +2863,9 @@ GameObject:
   - component: {fileID: 1716461493}
   - component: {fileID: 1716461494}
   - component: {fileID: 1716461495}
+  - component: {fileID: 1716461496}
   m_Layer: 0
-  m_Name: Triangle (6)
+  m_Name: 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2969,6 +3048,18 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 0
+--- !u!114 &1716461496
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1716461491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 687b061839e895b4db9977bf849ae3cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1735420642
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3472,8 +3563,9 @@ GameObject:
   - component: {fileID: 1959585656}
   - component: {fileID: 1959585658}
   - component: {fileID: 1959585659}
+  - component: {fileID: 1959585660}
   m_Layer: 0
-  m_Name: Triangle (1)
+  m_Name: 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3656,6 +3748,18 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 0
+--- !u!114 &1959585660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1959585655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2d08f5ea63ff164b83dc997880e11aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2069797401
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3742,8 +3846,9 @@ GameObject:
   - component: {fileID: 2123144300}
   - component: {fileID: 2123144302}
   - component: {fileID: 2123144303}
+  - component: {fileID: 2123144304}
   m_Layer: 0
-  m_Name: Triangle (2)
+  m_Name: 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3926,6 +4031,18 @@ PolygonCollider2D:
       - {x: -0.5, y: -0.28866667}
       - {x: 0.5, y: -0.28866667}
   m_UseDelaunayMesh: 0
+--- !u!114 &2123144304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123144299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdbfbc75e61dbc341a4fdf9b4212b035, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2135506632
 PrefabInstance:
   m_ObjectHideFlags: 0
