@@ -22,6 +22,6 @@ public class ButtonLevel1 : MonoBehaviour
 
     private void OnMouseDown()
     {
-        StartGame("Level1"); // Replace with your scene name
+        StartGame("Level1"); 
     }
 }
